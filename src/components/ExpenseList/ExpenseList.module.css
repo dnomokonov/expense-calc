@@ -10,7 +10,7 @@ th, td {
     border-collapse: collapse;
 }
 
-tr:hover {
+tbody tr:hover {
     background-color: rgb(221, 221, 221);
     cursor: pointer;
 }

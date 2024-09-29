@@ -1,9 +1,9 @@
 import classes from './ExpenseList.module.css'
 
-export default function ExpenseList({ date, category, amount, desc }) {
+export default function ExpenseList({ date, category, amount, desc, onClick}) {
     return (
         <>
-            <tr className={classes}>
+            <tr onClick={onClick} className={classes}>
                 <td>{date}</td>
                 <td>{category}</td>
                 <td>{amount}</td>
