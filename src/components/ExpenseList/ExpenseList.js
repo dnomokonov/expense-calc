@@ -1,14 +1,14 @@
-export default function ExpenseList({expenses}) {
+import classes from './ExpenseList.module.css'
+
+export default function ExpenseList({ date, category, amount, desc }) {
     return (
         <>
-            {expenses.map((expense, index) => {
-                <tr key={index}>
-                    <td>{expense.data}</td>
-                    <td>{expense.category}</td>
-                    <td>{expense.cost}</td>
-                    <td>{expense.disc}</td>
-                </tr>
-            })}
+            <tr className={classes}>
+                <td>{date}</td>
+                <td>{category}</td>
+                <td>{amount}</td>
+                <td>{desc}</td>
+            </tr>
         </>
     )
 }
