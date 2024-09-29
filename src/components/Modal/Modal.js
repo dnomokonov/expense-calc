@@ -6,6 +6,12 @@ export default function Modal({children, open}) {
 
     useEffect(() => {
         if (open) {
+            dialog.current.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    event.preventDefault()
+                }
+            })
+
             dialog.current.showModal()
         } else {
             dialog.current.close()
