@@ -1,0 +1,16 @@
+th {
+    text-align: center;
+}
+
+th, td {
+    width: 180px;
+    padding: 8px;
+    word-break: break-all;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr:hover {
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+}
