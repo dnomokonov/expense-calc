@@ -2,11 +2,11 @@ import classes from './ExpenseFilters.module.css'
 
 export default function ExpenseSort({sort, setSort, order, setOrder}) {
     const sortChange = (event) => {
-        const value = event.target.value;
+        const value = event.target.value
         const [newSort, newOrder] = value.split('-')
         
         setSort(newSort)
-        setOrder(newOrder);
+        setOrder(newOrder)
     }
     
     return (

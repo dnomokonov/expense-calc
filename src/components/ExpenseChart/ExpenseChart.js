@@ -1,4 +1,4 @@
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer, BarChart, PieChart, Pie, Cell, Tooltip, Legend } from "recharts"
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from "recharts"
 
 export default function ExpenseChart({expdata, type}) {
 
