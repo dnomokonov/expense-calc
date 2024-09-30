@@ -6,6 +6,8 @@ import Button from "./components/Button/Button"
 import Modal from "./components/Modal/Modal"
 import ExpenseSort from './components/ExpenseFilter/ExpenseSort'
 import ExpenseFilter from './components/ExpenseFilter/ExpenseFilter'
+import ExpenseChart from './components/ExpenseChart/ExpenseChart'
+
 
 function App() {
   const [expenses, setExpenses] = useState([])
@@ -214,6 +216,11 @@ function App() {
             </table>
           </div>
         </section>
+
+        <section>
+          <ExpenseChart expdata={sortedExpenses} type='line'/>
+        </section>
+
       </main>
     </>
   )
