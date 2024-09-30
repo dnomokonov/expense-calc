@@ -47,7 +47,7 @@ function App() {
     const desc = formDesc
 
     if (editExpense !== null) {
-      const updatedExpenses = expenses.map((expense, index) =>
+      const updatedExpenses = sortedExpenses.map((expense, index) =>
         index === editExpense ? { date, category, amount, desc } : expense
       )
       setExpenses(updatedExpenses)
@@ -66,7 +66,7 @@ function App() {
   }
 
   const handleEditExpense = (index) => {
-    const expense = expenses[index]
+    const expense = sortedExpenses[index]
     setEditExpense(index)
 
     setFormDate(expense.date)
@@ -78,7 +78,7 @@ function App() {
   }
 
   const handleDelExpense = () => {
-    const updatedExpenses = expenses.filter((_, item) => item !== editExpense)
+    const updatedExpenses = sortedExpenses.filter((_, item) => item !== editExpense)
 
     setExpenses(updatedExpenses)
     setFilteredExpenses(updatedExpenses)
