@@ -56,6 +56,7 @@ function App() {
     } else {
       const lastd = JSON.parse(localStorage.getItem('expenses')) || []
       const updatedExpenses = [...lastd, { date, category, amount, desc }]
+
       localStorage.setItem('expenses', JSON.stringify(updatedExpenses))
       setExpenses(updatedExpenses)
       setFilteredExpenses(updatedExpenses)
@@ -78,6 +79,7 @@ function App() {
 
   const handleDelExpense = () => {
     const updatedExpenses = expenses.filter((_, item) => item !== editExpense)
+
     setExpenses(updatedExpenses)
     setFilteredExpenses(updatedExpenses)
     localStorage.setItem('expenses', JSON.stringify(updatedExpenses))
@@ -219,6 +221,7 @@ function App() {
 
         <section>
           <ExpenseChart expdata={sortedExpenses} type='line'/>
+          <ExpenseChart expdata={sortedExpenses} type='pie'/>
         </section>
 
       </main>
