@@ -44,7 +44,7 @@ export default function ExpenseChart({expdata, type}) {
     }
 
     return (
-        <ResponsiveContainer width="50%" height={350}>
+        <ResponsiveContainer width="100%" height={350}>
             {type === 'line' && (
                 <LineChart
                     data={data} 
@@ -73,7 +73,7 @@ export default function ExpenseChart({expdata, type}) {
                       cy="50%"
                       labelLine={false}
                       label={renderCustomizedLabel}
-                      outerRadius={100}
+                      outerRadius={80}
                       fill="#8884d8"
                     >
                         {data.map((entry, index) => (

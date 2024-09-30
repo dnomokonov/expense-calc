@@ -1,13 +1,37 @@
-.filterblock {
+.sortblock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6px 30px;
+    border-radius: 6px;
+    gap: 4px;
 
+    color: #f8f8f8;
+    background-color: #5365ad;
 }
 
-.togglebtn {
+.sortblock select {
+    padding: 2px;
+    border: none;
+    border-radius: 2px;
+    background-color: #efefef;
+}
 
+.filterblock {
+    position: relative;
 }
 
 .dropdown {
+    width: 160px;
+    position: absolute;
     display: flex;
-
+    justify-content: center;
     flex-direction: column;
+    gap: 8px;
+
+    margin-top: 5px;
+    padding: 10px;
+    color: #fff;
+    background-color: #5365ad;
+    transition: all 0.2s;
 }

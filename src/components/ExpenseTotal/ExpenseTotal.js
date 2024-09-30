@@ -1,3 +1,4 @@
+import classes from './ExpenseTotal.module.css'
 import { useEffect, useState } from "react"
 
 export default function ExpenseTotal({expenses}) {
@@ -32,13 +33,16 @@ export default function ExpenseTotal({expenses}) {
     }
     
     return (
-        <div>
-            <label>Период:</label>
-            <select value={period} onChange={(e) => setPeriod(e.target.value)}>
-                <option value="month">Месяц</option>
-                <option value="year">Год</option>
-            </select>
-            <p>{period === 'month' ? 'Текущий месяц' : 'Год'} : {total.toFixed(2)}</p>
+        <div className={classes.periodblock}>
+            <div>
+                <label>Период</label>
+                <select value={period} onChange={(e) => setPeriod(e.target.value)}>
+                    <option value="month">Месяц</option>
+                    <option value="year">Год</option>
+                </select>
+            </div>
+            
+            <p>{period === 'month' ? 'Текущий месяц' : 'Год'} : <b>{total.toFixed(2)}</b></p>
         </div>
     )
 }

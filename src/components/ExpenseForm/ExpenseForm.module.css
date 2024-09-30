@@ -1,11 +1,21 @@
 .form {
-
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .form input {
-
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #efefef;
 }
 
-.form label {
-    
+@media (max-width: 768px) {
+    .form {
+        width: 350px;
+    }
 }

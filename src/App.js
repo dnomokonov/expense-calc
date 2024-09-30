@@ -133,67 +133,18 @@ function App() {
   return (
     <>
       <main>
-        <section>
-          <div className="btn-block">
-            <Button onClick={() => setOpenModal(true)}>Добавить</Button>
-
-            <ExpenseSort sort={sort} order={order} setSort={setSort} setOrder={setOrder} />
-
-            <ExpenseFilter onChangeFilter={changeFilter} />
-
-            <Modal open={isOpenModal}>
-              <h3>{editExpense !== null ? 'Редактировать запись' : 'Добавить запись'}</h3>
-              <Button onClick={resetForm}>Закрыть</Button>
-              <ExpenseForm onSubmit={handleSave}>
-                <label htmlFor="date">Дата</label>
-                <input
-                  type="date"
-                  name="date"
-                  id="date"
-                  value={formDate}
-                  onChange={(e) => setFormDate(e.target.value)}
-                />
-
-                <label htmlFor="category">Категория</label>
-                <select
-                  name="category"
-                  id="category"
-                  value={formCategory}
-                  onChange={(e) => setFormCategory(e.target.value)}
-                >
-                  <option value="Продукты">Продукты</option>
-                  <option value="Транспорт">Транспорт</option>
-                  <option value="Развлечение">Развлечение</option>
-                </select>
-
-                <label htmlFor="amount">Сумма</label>
-                <input
-                  type="text"
-                  name="amount"
-                  id="amount"
-                  value={formAmount}
-                  onChange={(e) => setFormAmount(e.target.value)}
-                />
-
-                <label htmlFor="desc">Описание</label>
-                <input
-                  type="text"
-                  name="desc"
-                  id="desc"
-                  value={formDesc}
-                  onChange={(e) => setFormDesc(e.target.value)}
-                />
-
-                <Button type="submit">{editExpense !== null ? 'Обновить' : 'Сохранить'}</Button>
-
-                {editExpense !== null && (
-                  <Button onClick={handleDelExpense}>Удалить</Button>
-                )}
-              </ExpenseForm>
-            </Modal>
-          </div>
-
+        <section className='data-block'>
           <div className="list-block">
+            <div className='panel'>
+              <ExpenseSort sort={sort} order={order} setSort={setSort} setOrder={setOrder} />
+              <ExpenseTotal expenses={expenses} /> 
+            </div>
+
+            <div className='filters-block'>
+              <Button onClick={() => setOpenModal(true)}>Добавить</Button>
+              <ExpenseFilter onChangeFilter={changeFilter} />
+            </div>
+        
             <table>
               <thead>
                 <tr>
@@ -217,17 +168,81 @@ function App() {
               </tbody>
             </table>
           </div>
-        </section>
 
-        <section>
-          <ExpenseTotal expenses={expenses}/>      
-        </section>
+          <Modal open={isOpenModal}>
+            <div className='head-modal'>
+              <h3>{editExpense !== null ? 'Редактировать запись' : 'Добавить запись'}</h3>
+              <Button onClick={resetForm}>X</Button>
+            </div>
+            
+            <ExpenseForm onSubmit={handleSave}>
 
-        <section>
-          <ExpenseChart expdata={sortedExpenses} type='line'/>
-          <ExpenseChart expdata={sortedExpenses} type='pie'/>
-        </section>
+              <div className='field-group'>
+                <div className='field'>
+                  <label htmlFor="date">Дата</label>
+                  <input
+                    type="date"
+                    name="date"
+                    id="date"
+                    value={formDate}
+                    onChange={(e) => setFormDate(e.target.value)}
+                  />
+                </div>
 
+                <div className='field'>
+                  <label htmlFor="category">Категория</label>
+                  <select
+                    name="category"
+                    id="category"
+                    value={formCategory}
+                    onChange={(e) => setFormCategory(e.target.value)}
+                  >
+                    <option value="Продукты">Продукты</option>
+                    <option value="Транспорт">Транспорт</option>
+                    <option value="Развлечение">Развлечение</option>
+                  </select>
+                </div>
+              </div>
+                    
+
+              <div className='field'>
+                <label htmlFor="amount">Сумма</label>
+                <input
+                  type="text"
+                  name="amount"
+                  id="amount"
+                  value={formAmount}
+                  onChange={(e) => setFormAmount(e.target.value)}
+                />
+              </div>  
+
+              <div className='field'>
+              <label htmlFor="desc">Описание</label>
+              <input
+                type="text"
+                name="desc"
+                id="desc"
+                value={formDesc}
+                onChange={(e) => setFormDesc(e.target.value)}
+              />
+              </div>  
+
+              <div className='btn-modal'>
+                <Button type="submit">{editExpense !== null ? 'Обновить' : 'Сохранить'}</Button>
+
+                {editExpense !== null && (
+                  <Button onClick={handleDelExpense} >Удалить</Button>
+                )}
+              </div>
+            </ExpenseForm>
+          </Modal>
+
+          <div className='chart-block'>
+            <ExpenseChart expdata={sortedExpenses} type='line'/>
+            <ExpenseChart expdata={sortedExpenses} type='pie'/>
+          </div>
+
+        </section>
       </main>
     </>
   )
