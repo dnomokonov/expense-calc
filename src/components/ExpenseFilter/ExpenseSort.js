@@ -1,3 +1,5 @@
+import classes from './ExpenseFilters.module.css'
+
 export default function ExpenseSort({sort, setSort, order, setOrder}) {
     const sortChange = (event) => {
         const value = event.target.value;
@@ -8,7 +10,7 @@ export default function ExpenseSort({sort, setSort, order, setOrder}) {
     }
     
     return (
-        <div className="sort-block">
+        <div className={classes}>
             <label>Сортировать по:</label>
             <select value={`${sort}-${order}`} onChange={sortChange}>
                 <option value="date-desc">Дата | Убывание</option>
