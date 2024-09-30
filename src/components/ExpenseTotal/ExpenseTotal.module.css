@@ -1,0 +1,22 @@
+.periodblock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0 30px;
+    border-radius: 6px;
+
+    color: #fff;
+    background-color: #5365ad;
+}
+
+.periodblock label {
+    padding-right: 5px;
+}
+
+.periodblock select {
+    padding: 2px;
+    border: none;
+    border-radius: 2px;
+    background-color: #efefef;
+}

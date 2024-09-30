@@ -10,8 +10,8 @@ export default function ExpenseSort({sort, setSort, order, setOrder}) {
     }
     
     return (
-        <div className={classes}>
-            <label>Сортировать по:</label>
+        <div className={classes.sortblock}>
+            <label>Сортировать по</label>
             <select value={`${sort}-${order}`} onChange={sortChange}>
                 <option value="date-desc">Дата | Убывание</option>
                 <option value="date-asc">Дата | Возрастание</option>
