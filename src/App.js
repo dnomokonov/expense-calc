@@ -7,7 +7,7 @@ import Modal from "./components/Modal/Modal"
 import ExpenseSort from './components/ExpenseFilter/ExpenseSort'
 import ExpenseFilter from './components/ExpenseFilter/ExpenseFilter'
 import ExpenseChart from './components/ExpenseChart/ExpenseChart'
-
+import ExpenseTotal from './components/ExpenseTotal/ExpenseTotal'
 
 function App() {
   const [expenses, setExpenses] = useState([])
@@ -217,6 +217,10 @@ function App() {
               </tbody>
             </table>
           </div>
+        </section>
+
+        <section>
+          <ExpenseTotal expenses={expenses}/>      
         </section>
 
         <section>
